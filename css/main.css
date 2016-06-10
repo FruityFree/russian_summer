@@ -124,6 +124,7 @@ header img{
 }
 #man #cyclist{
   width: 450px;
+  min-height: 500px;
 }
 #outfit{
   position: absolute;

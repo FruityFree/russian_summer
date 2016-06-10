@@ -2,6 +2,7 @@ var intervalCount;
 var intervalId;
 var lastOutfitNum;
 var outfitOverallCount = 5;
+var isCyclist = true;
 
 var intervalsMx = [2,1.9,1.75, 1.65, 1.6, 1.55, 1.5, 1.45, 1.4, 1.3, 1.2,
   1.1, 1,1,1,1,1,1,1,1,1.2, 1.3, 1.4, 1.5, 1.8, 2]
@@ -20,9 +21,9 @@ function interval(count){
 
 function changeOutfit(){
   intervalCount += 1;
-  if (intervalCount > 20){
+  if (intervalCount > 3){
     clearInterval(intervalId);
-    showSigns();
+    setTimeout(showSigns, 300);
   }
   var src = chooseOutfit();;
   $("#outfit-img").attr("src", src);
@@ -40,7 +41,26 @@ function chooseOutfit(){
 
 function showSigns(){
   $("#weather").show();
-  $("#button a").show();
+  $("#change-cyclist").show();
+}
+
+function reset(){
+  $("#weather").hide();
+  $("#change-cyclist").hide();
+  $("#outfit").hide();
+}
+
+function changeCyclist(){
+  if (isCyclist){
+    $("#cyclist").attr("src", "/img/pedestrian.png");
+    $("#change-cyclist").text("хочу кататься");
+    isCyclist = false;
+  } else {
+    $("#cyclist").attr("src", "/img/cyclist_base.png");
+    $("#change-cyclist").text("не хочу кататься");
+    isCyclist = true;
+  }
+  reset();
 }
 
 //TODO remove on production
