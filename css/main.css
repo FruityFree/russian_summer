@@ -125,6 +125,7 @@ header img{
   position: absolute;
   left: 234px;
   top: 74px;
+  display: none;
   /*opacity: 0.3;*/
 }
 #outfit img{
