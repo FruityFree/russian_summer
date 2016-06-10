@@ -142,6 +142,7 @@ header img{
 }
 #button img{
   width: 306px;
+  cursor: pointer;
 }
 
 

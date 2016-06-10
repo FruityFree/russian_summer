@@ -1,7 +1,10 @@
 var intervalCount;
 var intervalId;
 var lastOutfitNum;
-var intervalsMx = [2,1.9,1.75, 1.65, 1.6, 1.55, 1.5, 1.45, 1.4, 1.3, 1.2, 1.1, 1,1,1,1,1,1,1,1,1.2, 1.3, 1.4, 1.5, 1.8, 2]
+var outfitOverallCount = 5;
+
+var intervalsMx = [2,1.9,1.75, 1.65, 1.6, 1.55, 1.5, 1.45, 1.4, 1.3, 1.2,
+  1.1, 1,1,1,1,1,1,1,1,1.2, 1.3, 1.4, 1.5, 1.8, 2]
 var basicTimeout = 120;
 
 function launchAnimation(){
@@ -20,10 +23,17 @@ function changeOutfit(){
   if (intervalCount > 20){
     clearInterval(intervalId);
   }
-  console.log(intervalCount);
-  var outfitNum = Math.ceil(5*Math.random());
-  var src = "/img/outfits/"+outfitNum+".png";
+  var src = chooseOutfit();;
   $("#outfit-img").attr("src", src);
+}
+
+function chooseOutfit(){
+  var choosed = lastOutfitNum;
+  while (choosed == lastOutfitNum){
+    choosed = Math.ceil(outfitOverallCount*Math.random())
+  }
+  lastOutfitNum = choosed;
+  return "/img/outfits/"+choosed+".png";
 }
 
 launchAnimation();
