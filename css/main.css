@@ -95,9 +95,42 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+#wrapper{
+  width: 100%;
+  height: 100%;
+}
+#center-wrapper{
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  /*overflow:hidden;*/
+}
+
+header img{
+  width: 1180px;
+  margin: 0 auto;
+  display: block;
+}
+
+#man{
+  width: 450px;
+  margin-left: 180px;
+  margin-top: 50px;
+}
+#man img{
+  width: 450px;
+}
+
 #button{
   border: 0;
   background: transparent;
+  /*position: relative;*/
+  position: absolute;
+  bottom: 90px;
+  left: 640px;
+}
+#button img{
+  width: 306px;
 }
 
 
