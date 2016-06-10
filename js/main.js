@@ -5,7 +5,7 @@ var outfitOverallCount = 5;
 
 var intervalsMx = [2,1.9,1.75, 1.65, 1.6, 1.55, 1.5, 1.45, 1.4, 1.3, 1.2,
   1.1, 1,1,1,1,1,1,1,1,1.2, 1.3, 1.4, 1.5, 1.8, 2]
-var basicTimeout = 120;
+var basicTimeout = 80;
 
 function launchAnimation(){
   intervalCount = 0;
@@ -22,9 +22,11 @@ function changeOutfit(){
   intervalCount += 1;
   if (intervalCount > 20){
     clearInterval(intervalId);
+    showSigns();
   }
   var src = chooseOutfit();;
   $("#outfit-img").attr("src", src);
+
 }
 
 function chooseOutfit(){
@@ -36,4 +38,10 @@ function chooseOutfit(){
   return "/img/outfits/"+choosed+".png";
 }
 
-launchAnimation();
+function showSigns(){
+  $("#weather").show();
+  $("#button a").show();
+}
+
+//TODO remove on production
+//launchAnimation();
