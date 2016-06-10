@@ -1,0 +1,3 @@
+function launchAnimation(){
+  alert("hello");
+}
