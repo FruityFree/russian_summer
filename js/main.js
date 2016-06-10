@@ -1,43 +1,48 @@
 var intervalCount;
 var intervalId;
-var lastOutfitNum;
-var outfitOverallCount = 5;
+var outfitOverallCount = 4;
 var isCyclist = true;
 
-var intervalsMx = [2,1.9,1.75, 1.65, 1.6, 1.55, 1.5, 1.45, 1.4, 1.3, 1.2,
-  1.1, 1,1,1,1,1,1,1,1,1.2, 1.3, 1.4, 1.5, 1.8, 2]
-var basicTimeout = 80;
+var basicTimeout = 350;
+var changesOverallNum = 20;
+// var intervalsMx = [2.5,2.2, 2, 1.9, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1,
+//   1.1,1, 1,1,1,1.2,1.5,1.7,2,3,4]
+
 
 function launchAnimation(){
-  intervalCount = 0;
-  $("#outfit").show();
-  intervalId = setInterval(changeOutfit, interval(intervalCount));
-  changeOutfit();
+  reset();
+  $(".outfit").show();
+  setTimeout(changeOutfit, interval(intervalCount));
+  // changeOutfit();
 }
 
 function interval(count){
-  return intervalsMx[count]*basicTimeout;
+  return basicTimeout;
 }
 
 function changeOutfit(){
   intervalCount += 1;
-  if (intervalCount > 3){
-    clearInterval(intervalId);
-    setTimeout(showSigns, 300);
+  console.log(intervalCount);
+  if (intervalCount > changesOverallNum){
+    setTimeout(showSigns, 800);
+  } else {
+    setTimeout(changeOutfit, interval(intervalCount));
   }
-  var src = chooseOutfit();;
-  $("#outfit-img").attr("src", src);
 
+  changeItems();
 }
 
-function chooseOutfit(){
-  var choosed = lastOutfitNum;
-  while (choosed == lastOutfitNum){
-    choosed = Math.ceil(outfitOverallCount*Math.random())
-  }
-  lastOutfitNum = choosed;
-  return "/img/outfits/"+choosed+".png";
+function changeItems(){
+  changeItem("boots");
+  changeItem("pants");
+  changeItem("jacket");
+
 }
+function changeItem(name){
+  var num = Math.ceil(outfitOverallCount*Math.random())
+  $("#"+name+"-img").attr("src", "/img/outfits/"+name+num+".png");
+}
+
 
 function showSigns(){
   $("#weather").show();
@@ -45,9 +50,10 @@ function showSigns(){
 }
 
 function reset(){
+  intervalCount = 0;
   $("#weather").hide();
   $("#change-cyclist").hide();
-  $("#outfit").hide();
+  $(".outfit").hide();
 }
 
 function changeCyclist(){

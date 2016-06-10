@@ -126,14 +126,14 @@ header img{
   width: 450px;
   min-height: 500px;
 }
-#outfit{
+.outfit{
   position: absolute;
   left: 234px;
   top: 73px;
   display: none;
   /*opacity: 0.3;*/
 }
-#outfit img{
+.outfit img{
   width: 177px;
 }
 
