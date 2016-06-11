@@ -31,26 +31,6 @@ var startTheRain;
     setTranslate3DTransform(this.element, Math.round(this.xPos), Math.round(this.yPos));
   }
 
-  function setTranslate3DTransform(element, xPosition, yPosition) {
-    var val = "translate3d(" + xPosition + "px, " + yPosition + "px" + ", 0)";
-    element.style[transformProperty] = val;
-  }
-
-  var transforms = ["transform",
-                  "msTransform",
-                  "webkitTransform",
-                  "mozTransform",
-                  "oTransform"];
-
-  var transformProperty = getSupportedPropertyName(transforms);
-  function getSupportedPropertyName(properties) {
-      for (var i = 0; i < properties.length; i++) {
-          if (typeof document.body.style[properties[i]] != "undefined") {
-              return properties[i];
-          }
-      }
-      return null;
-  }
 
   function drawDrops(){
     var originalDrop = document.querySelector(".raindrop");
@@ -70,6 +50,28 @@ var startTheRain;
     }
   }
   function drawDrop(){
+  }
+
+
+  function setTranslate3DTransform(element, xPosition, yPosition) {
+    var val = "translate3d(" + xPosition + "px, " + yPosition + "px" + ", 0)";
+    element.style[transformProperty] = val;
+  }
+
+  var transforms = ["transform",
+                  "msTransform",
+                  "webkitTransform",
+                  "mozTransform",
+                  "oTransform"];
+
+  var transformProperty = getSupportedPropertyName(transforms);
+  function getSupportedPropertyName(properties) {
+      for (var i = 0; i < properties.length; i++) {
+          if (typeof document.body.style[properties[i]] != "undefined") {
+              return properties[i];
+          }
+      }
+      return null;
   }
 
 })();
