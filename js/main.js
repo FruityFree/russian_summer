@@ -1,6 +1,8 @@
 var launchAnimation;
 var changeCyclist;
 
+startTheRain();
+
 (function(){
   var intervalCount;
   var intervalId;
