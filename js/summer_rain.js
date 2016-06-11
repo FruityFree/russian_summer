@@ -15,8 +15,8 @@ var startTheRain;
                             window.msRequestAnimationFrame;
 
   var dropNum = 10;
-  var browserWidth = 400;
-  var browserHeight = 400;
+  var browserWidth;
+  var browserHeight;
 
   var drops = []
 
@@ -33,12 +33,17 @@ var startTheRain;
 
 
   function drawDrops(){
+    browserWidth = document.documentElement.clientWidth;
+    browserHeight = document.documentElement.clientHeight;
+
     var originalDrop = document.querySelector(".raindrop");
     var dropContainer = originalDrop.parentNode;
-    var clonnedDrop = originalDrop.cloneNode(true);
-    dropContainer.appendChild(clonnedDrop);
+
     for (var i = 0; i < dropNum; i++){
-      var dropObject = new Drop(clonnedDrop, 2, 200, 200);
+      var clonnedDrop = originalDrop.cloneNode(true);
+      dropContainer.appendChild(clonnedDrop);
+
+      var dropObject = new Drop(clonnedDrop, 2, getStartX(), getStartY());
       drops.push(dropObject);
     }
     moveDrops();
@@ -50,6 +55,20 @@ var startTheRain;
     }
   }
   function drawDrop(){
+  }
+
+
+
+  function getStartX(){
+    return getPosition(50, browserWidth);
+  }
+
+  function getStartY(){
+    return getPosition(50, browserHeight);
+  }
+
+  function getPosition(offset, size) {
+    return Math.round(-1*offset + Math.random() * (size+2*offset));
   }
 
 
