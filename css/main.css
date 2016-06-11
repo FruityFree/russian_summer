@@ -178,6 +178,8 @@ header img{
 .raindrop{
   pointer-events: none;
   position: fixed;
+  top: -300;
+  left: -300;
 }
 
 

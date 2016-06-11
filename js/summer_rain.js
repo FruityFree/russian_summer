@@ -24,13 +24,22 @@ var startTheRain;
     this.element = element;
     this.xPos = getStartX();
     this.yPos = getStartY();
-    this.speedX = getStartSpeedX();
-    this.speedY = getStartSpeedY();
+    this.speedX = getSpeedX();
+    this.speedY = getSpeedY();
+
+    this.element.style.opacity = .2 + 0.8*Math.random();
+    this.element.height = 40 + 10*Math.random();
+    // element.style[transformProperty] = "rotate(30deg)"
+    // element.style.webkitTransform = "rotate(-20deg)";
   }
 
   Drop.prototype.update = function(){
     this.xPos += this.speedX;
     this.yPos += this.speedY;
+    if (this.yPos > browserHeight)
+      this.yPos = -50;
+    if (this.xPos < -150)
+      this.xPos += browserWidth+200;
     setTranslate3DTransform(this.element, Math.round(this.xPos), Math.round(this.yPos));
   }
 
@@ -41,10 +50,13 @@ var startTheRain;
 
     var originalDrop = document.querySelector(".raindrop");
     var dropContainer = originalDrop.parentNode;
+    originalDrop.style.display = "block";
 
     for (var i = 0; i < dropNum; i++){
       drawDrop(originalDrop, dropContainer);
     }
+
+    originalDrop.style.display = "none";
     moveDrops();
   }
 
@@ -66,19 +78,19 @@ var startTheRain;
 
 
   function getStartX(){
-    return getPosition(50, browserWidth);
+    return getPosition(150, browserWidth);
   }
 
   function getStartY(){
-    return getPosition(50, browserHeight);
+    return getPosition(150, browserHeight);
   }
 
-  function getStartSpeedX(){
-    return -2;
+  function getSpeedX(){
+    return -2.5 - Math.random();
   }
 
-  function getStartSpeedY(){
-    return 6;
+  function getSpeedY(){
+    return 6 + Math.random();
   }
 
   function getPosition(offset, size) {
