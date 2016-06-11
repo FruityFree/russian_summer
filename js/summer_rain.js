@@ -14,20 +14,23 @@ var startTheRain;
                             window.webkitRequestAnimationFrame ||
                             window.msRequestAnimationFrame;
 
-  var dropNum = 10;
+  var dropNum = 100;
   var browserWidth;
   var browserHeight;
 
   var drops = []
 
-  function Drop(element, speed, xPos, yPos){
+  function Drop(element){
     this.element = element;
-    this.xPos = xPos;
-    this.yPos = yPos;
-    this.speed = speed;
+    this.xPos = getStartX();
+    this.yPos = getStartY();
+    this.speedX = getStartSpeedX();
+    this.speedY = getStartSpeedY();
   }
 
   Drop.prototype.update = function(){
+    this.xPos += this.speedX;
+    this.yPos += this.speedY;
     setTranslate3DTransform(this.element, Math.round(this.xPos), Math.round(this.yPos));
   }
 
@@ -40,11 +43,7 @@ var startTheRain;
     var dropContainer = originalDrop.parentNode;
 
     for (var i = 0; i < dropNum; i++){
-      var clonnedDrop = originalDrop.cloneNode(true);
-      dropContainer.appendChild(clonnedDrop);
-
-      var dropObject = new Drop(clonnedDrop, 2, getStartX(), getStartY());
-      drops.push(dropObject);
+      drawDrop(originalDrop, dropContainer);
     }
     moveDrops();
   }
@@ -53,8 +52,15 @@ var startTheRain;
     for (var i = 0; i < dropNum; i++){
       drops[i].update();
     }
+    requestAnimationFrame(moveDrops);
   }
-  function drawDrop(){
+
+  function drawDrop(originalDrop, dropContainer){
+    var clonnedDrop = originalDrop.cloneNode(true);
+    dropContainer.appendChild(clonnedDrop);
+
+    var dropObject = new Drop(clonnedDrop);
+    drops.push(dropObject);
   }
 
 
@@ -65,6 +71,14 @@ var startTheRain;
 
   function getStartY(){
     return getPosition(50, browserHeight);
+  }
+
+  function getStartSpeedX(){
+    return -2;
+  }
+
+  function getStartSpeedY(){
+    return 6;
   }
 
   function getPosition(offset, size) {
