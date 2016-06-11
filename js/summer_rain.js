@@ -1,10 +1,27 @@
 var startTheRain;
+var stopTheRain;
 
 (function(){
   startTheRain = function(){
+    if (drops.length > 0){
+      showTheDrops();
+    } else {
+      drawDrops();
+    }
     // window.addEventListener("DOMContentLoaded",drawDrops, false);
     // window.addEventListener("resize", setResetFlag, false);
-    drawDrops();
+  }
+
+  stopTheRain = function(){
+    for (var i = 0; i < drops.length; i++){
+      drops[i].element.style.display = "none";
+    }
+  }
+
+  function showTheDrops(){
+    for (var i = 0; i < drops.length; i++){
+      hiddenDrops.push(drops[i]);
+    }
   }
   var requestAnimationFrame = window.requestAnimationFrame ||
                             window.mozRequestAnimationFrame ||
