@@ -3,7 +3,7 @@ var intervalId;
 var outfitOverallCount = 4;
 var isCyclist = true;
 
-var basicTimeout = 350;
+var basicTimeout = 280;
 var changesOverallNum = 20;
 // var intervalsMx = [2.5,2.2, 2, 1.9, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1,
 //   1.1,1, 1,1,1,1.2,1.5,1.7,2,3,4]
