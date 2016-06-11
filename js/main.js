@@ -1,7 +1,7 @@
 var launchAnimation;
 var changeCyclist;
 
-startTheRain();
+
 
 
 (function(){
@@ -12,7 +12,7 @@ startTheRain();
   // launchAnimation = launchAnimation;
 
 
-  var basicTimeout = 280;
+  var basicTimeout = 240;
   var changesOverallNum = 20;
   // var intervalsMx = [2.5,2.2, 2, 1.9, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1,
   //   1.1,1, 1,1,1,1.2,1.5,1.7,2,3,4]
@@ -56,7 +56,7 @@ startTheRain();
   function showSigns(){
     $("#weather").show();
     $("#change-cyclist").show();
-
+    startTheRain();
   }
 
   function reset(){

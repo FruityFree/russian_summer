@@ -24,6 +24,7 @@ var startTheRain;
     this.yPos = getStartY();
     this.speedX = getSpeedX();
     this.speedY = getSpeedY();
+    this.rotation = -5 + 10*Math.random();
 
     this.element.style.opacity = .2 + 0.8*Math.random();
     this.element.height = 35 + 15*Math.random();
@@ -36,7 +37,10 @@ var startTheRain;
       this.yPos = -50;
     if (this.xPos < -150)
       this.xPos += browserWidth+200;
-    setTranslate3DTransform(this.element, Math.round(this.xPos), Math.round(this.yPos));
+    var newX = Math.round(this.xPos);
+    var newY = Math.round(this.yPos);
+    var rotation = Math.round(this.rotation);
+    setTranslate3DTransform(this.element, newX, newY, rotation);
   }
 
 
@@ -98,8 +102,9 @@ var startTheRain;
   }
 
 
-  function setTranslate3DTransform(element, xPosition, yPosition) {
-    var val = "translate3d(" + xPosition + "px, " + yPosition + "px" + ", 0)";
+  function setTranslate3DTransform(element, xPosition, yPosition, rotation) {
+    var val = "translate3d(" + xPosition + "px, " + yPosition + "px" + ", 0)" +
+      " rotate("+rotation+"deg)";
     element.style[transformProperty] = val;
   }
 
