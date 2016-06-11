@@ -168,8 +168,16 @@ header img{
   cursor: pointer;
 }
 
-canvas{
-  border: 3px #ccc solid;
+#rain{
+  z-index: 1000;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.raindrop{
+  pointer-events: none;
+  position: fixed;
 }
 
 
