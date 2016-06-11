@@ -169,17 +169,18 @@ header img{
 }
 
 #rain{
-  z-index: 1000;
   position: absolute;
   left: 0px;
   top: 0px;
+  z-index: 1000;
 }
 
 .raindrop{
   pointer-events: none;
   position: fixed;
-  top: -300;
-  left: -300;
+  display: none;
+  top: -400;
+  left: -400;
 }
 
 

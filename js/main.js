@@ -3,6 +3,7 @@ var changeCyclist;
 
 startTheRain();
 
+
 (function(){
   var intervalCount;
   var intervalId;
@@ -17,7 +18,7 @@ startTheRain();
   //   1.1,1, 1,1,1,1.2,1.5,1.7,2,3,4]
 
 
-  function launchAnimation(){
+  launchAnimation = function(){
     reset();
     $(".outfit").show();
     setTimeout(changeOutfit, interval(intervalCount));
@@ -30,7 +31,7 @@ startTheRain();
 
   function changeOutfit(){
     intervalCount += 1;
-    console.log(intervalCount);
+
     if (intervalCount > changesOverallNum){
       setTimeout(showSigns, 800);
     } else {
@@ -55,6 +56,7 @@ startTheRain();
   function showSigns(){
     $("#weather").show();
     $("#change-cyclist").show();
+
   }
 
   function reset(){
@@ -64,7 +66,7 @@ startTheRain();
     $(".outfit").hide();
   }
 
-  function changeCyclist(){
+  changeCyclist = function(){
     if (isCyclist){
       $("#cyclist").attr("src", "/img/pedestrian.png");
       $("#change-cyclist").text("хочу кататься");

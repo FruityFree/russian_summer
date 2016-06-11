@@ -2,13 +2,10 @@ var startTheRain;
 
 (function(){
   startTheRain = function(){
-    window.addEventListener("DOMContentLoaded",drawDrops, false);
+    // window.addEventListener("DOMContentLoaded",drawDrops, false);
     // window.addEventListener("resize", setResetFlag, false);
+    drawDrops();
   }
-  function setup() {
-
-  }
-  setup();
   var requestAnimationFrame = window.requestAnimationFrame ||
                             window.mozRequestAnimationFrame ||
                             window.webkitRequestAnimationFrame ||
@@ -29,8 +26,6 @@ var startTheRain;
 
     this.element.style.opacity = .2 + 0.8*Math.random();
     this.element.height = 40 + 10*Math.random();
-    // element.style[transformProperty] = "rotate(30deg)"
-    // element.style.webkitTransform = "rotate(-20deg)";
   }
 
   Drop.prototype.update = function(){
