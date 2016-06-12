@@ -11,6 +11,9 @@ var changePerson;
   var isCyclist = true;
   // launchAnimation = launchAnimation;
 
+  //Data vars. Defined later;
+  var remarks;
+
 
   var basicTimeout = 40;
   var changesOverallNum = 3;
@@ -89,8 +92,16 @@ var changePerson;
     this.buttonUrl = buttonUrl;
   }
 
+  function showPrediction(){
+    $("#prediction").show();
+    var remarkId = Math.floor(remarks.length * Math.random());
+    $("#prediction #remark").text(remarks[remarkId]);
+  }
 
-  var remarks = [
+
+
+  //data
+  remarks = [
     "Шапку не забудь!",
     "Оставайся дома.",
     "Не в этот раз.",
@@ -99,10 +110,4 @@ var changePerson;
     "А давай в другое лето?",
     "Может, лучше чаю?"
   ]
-  function showPrediction(){
-    $("#prediction").show();
-
-    var remarkId = Math.floor(remarks.length * Math.random());
-    $("#prediction #remark").text(remarks[remarkId]);
-  }
 })()
