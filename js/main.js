@@ -19,7 +19,7 @@ var changePerson;
 
 
   var basicTimeout = 240;
-  var changesOverallNum = 5;
+  var changesOverallNum = 12;
   // var changesOverallNum = 20;
   // var intervalsMx = [2.5,2.2, 2, 1.9, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1,
   //   1.1,1, 1,1,1,1.2,1.5,1.7,2,3,4]
@@ -81,8 +81,11 @@ var changePerson;
   }
 
   changePerson = function(){
-    currentPerson = people[Math.floor(people.length*Math.random())];
-    console.log(currentPerson);
+    var newPerson = currentPerson;
+    while (newPerson==currentPerson){
+      newPerson = people[Math.floor(people.length*Math.random())];
+    }
+    currentPerson = newPerson;
     $("#person").attr("src", "/img/person/" + currentPerson.url)
     changeItems();
     showDuck();
