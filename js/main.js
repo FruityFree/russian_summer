@@ -18,7 +18,7 @@ var changePerson;
   var buttons;
 
 
-  var basicTimeout = 240;
+  var basicTimeout = 180;
   var changesOverallNum = 12;
   // var changesOverallNum = 20;
   // var intervalsMx = [2.5,2.2, 2, 1.9, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1,
