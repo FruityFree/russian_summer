@@ -181,7 +181,7 @@ header img{
 }
 #button img{
   width: 306px;
-  /*cursor: pointer;*/
+  cursor: pointer;
 }
 #main-button{
   z-index: 100;
@@ -211,6 +211,15 @@ header img{
   left: -400;
 }
 
+#ext-link{
+  width: 120px;
+  margin: 100px auto;
+}
+#ext-link a{
+  /*color: #00bed9;*/
+  color: #aacfea;
+  font-size: 1.1em;
+}
 
 
 
