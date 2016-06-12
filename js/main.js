@@ -26,7 +26,6 @@ var changePerson;
 
 
   launchAnimation = function(){
-    console.log(currentPerson);
     reset();
     $(".outfit").show();
     setTimeout(changeOutfit, interval(intervalCount));
@@ -176,7 +175,7 @@ var changePerson;
     new Person("f", "girl2.png", 4),
     new Person("f", "girl3.png", 4)
   ]
-  currentPerson = people[0];
+  // currentPerson = people[0];
 
   buttons = [
     new Button(1, "ride", "не хочу кататься"),
@@ -184,4 +183,5 @@ var changePerson;
     new Button(3, "swim", "не хочу купаться"),
     new Button(4, "walk", "не хочу гулять"),
   ];
+  changePerson();
 })()
