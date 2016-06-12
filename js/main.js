@@ -79,7 +79,7 @@ var changePerson;
   // resets all the screen to basic state
   function reset(){
     intervalCount = 0;
-    $("#prediction").hide();
+    $("#prediction").hide(); //TODO
     $(".outfit").hide();
     stopTheRain();
   }
