@@ -15,6 +15,7 @@ var changePerson;
   var setup;
   var people;
   var currentPerson;
+  var buttons;
 
 
   var basicTimeout = 240;
@@ -158,4 +159,11 @@ var changePerson;
     new Person("f", "girl3.png")
   ]
   currentPerson = people[0];
+
+  buttons = [
+    new Button(1, "ride", "не хочу кататься"),
+    new Button(2, "picnic", "не хочу на пикник"),
+    new Button(3, "swim", "не хочу купаться"),
+    new Button(4, "walk", "не хочу гулять"),
+  ];
 })()
