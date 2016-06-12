@@ -34,18 +34,6 @@ html {
     text-shadow: none;
 }
 
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
 
 /*
  * Remove the gap between audio, canvas, iframes,
@@ -105,10 +93,6 @@ body{
   height: 100%;
 }
 
-/* basic */
-#center-wrapper{
-  width: 1024px;
-}
 
 
 #center-wrapper{
@@ -117,9 +101,6 @@ body{
 }
 
 /* header */
-
-
-
 header{
   margin: 0 auto;
 }
@@ -128,10 +109,43 @@ header img{
   display: block;
 }
 
-@media all and (max-width:800px){
+@media all and (max-width:960px){
+  #center-wrapper{
+    width: 320px;
+  }
+  header{
+    width: 320px;
+  }
+  #man{
+    margin: -75px auto 0;
+    width: 310px;
+  }
+  #interaction{
+    flex-direction: column;
+    margin: 10px auto 10px;
+    width: 310px;
+  }
+  #prediction{
 
+  }
+  #button{
+    margin-top: 20px;
+  }
+  #button img{
+    width: 306px;
+  }
+  #change-person{
+    margin-top: -20px;
+    padding-left: 100px;
+  }
+  #ext-link{
+    margin-top:40px;
+  }
 }
-@media all and (min-width:800px) and (max-width:1200px){
+@media all and (min-width:960px) {
+  #center-wrapper{
+    width: 960px;
+  }
   header{
     width: 720px;
   }
@@ -146,6 +160,10 @@ header img{
     flex-direction: column;
     padding-left: 50px;
   }
+  #prediction{
+    margin-left: 20px;
+    margin-top: 140px;
+  }
   #button{
     margin-top: 70px;
   }
@@ -156,9 +174,9 @@ header img{
     margin-top: -20px;
     padding-left: 100px;
   }
-}
-@media all and (min-width:1021px){
-
+  #ext-link{
+    padding-top: 110px;
+  }
 }
 
 /* person */
@@ -196,10 +214,6 @@ header img{
 
 
 /* Message */
-#prediction{
-  margin-left: 20px;
-  margin-top: 140px;
-}
 
 #prediction{
   font-size: 2.15em;
@@ -258,11 +272,11 @@ header img{
 
 /* links */
 #ext-link{
-  width: 110px;
-  margin: 140px auto;
+  clear: both;
+  text-align:center;
+  width: 100%;
 }
 #ext-link a{
-  /*color: #00bed9;*/
   color: #aacfea;
   font-size: 1.1em;
 }

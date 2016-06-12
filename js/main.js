@@ -79,7 +79,7 @@ var changePerson;
   // resets all the screen to basic state
   function reset(){
     intervalCount = 0;
-    // $("#prediction").hide();
+    $("#prediction").hide();
     $(".outfit").hide();
     stopTheRain();
   }
@@ -190,5 +190,5 @@ var changePerson;
     new Button(3, "swim", "не хочу купаться"),
     new Button(4, "walk", "не хочу гулять"),
   ];
-  // changePerson();
+  changePerson();
 })()
