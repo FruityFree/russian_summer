@@ -9,8 +9,12 @@ var stopTheRain;
       drawDrops();
     }
     // window.addEventListener("DOMContentLoaded",drawDrops, false);
-    // window.addEventListener("resize", setResetFlag, false);
     window.addEventListener("resize", resetDimensions, false);
+  }
+
+
+  function dealWithResize(){
+
   }
 
   stopTheRain = function(){
@@ -63,11 +67,8 @@ var stopTheRain;
   }
 
   function resetDimensions(){
-    // browserWidth = document.documentElement.clientWidth;
-    // browserHeight = document.documentElement.clientHeight;
-    var ratio = window.devicePixelRatio || 1;
-    browserWidth = screen.width * ratio;
-    browserHeight = screen.height * ratio;
+    browserWidth =$(window).width();
+    browserHeight = $(window).height();
   }
 
   function drawDrops(){

@@ -37,7 +37,7 @@ var changePerson;
       setTimeout(wearWarmItems, basicTimeout);
       setTimeout(showSigns, 800);
     } else {
-      setTimeout(changeOutfit, interval(intervalCount));
+      setTimeout(changeOutfit, basicTimeout);
     }
 
     changeItems();
