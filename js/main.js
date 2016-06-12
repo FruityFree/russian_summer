@@ -1,14 +1,13 @@
+// Function - launch the outfit changing animation
 var launchAnimation;
+// Function - switch the person + corresponding button
 var changePerson;
 
 
 
 
 (function(){
-  var intervalCount;
-  // var intervalId;
-  // var outfitOverallCount = 4;
-  // launchAnimation = launchAnimation;
+
 
   //Data vars. Defined in the end;
   var remarks;
@@ -18,24 +17,19 @@ var changePerson;
   var buttons;
 
 
-  var basicTimeout = 180;
-  var changesOverallNum = 12;
-  // var changesOverallNum = 20;
-  // var intervalsMx = [2.5,2.2, 2, 1.9, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1,
-  //   1.1,1, 1,1,1,1.2,1.5,1.7,2,3,4]
+  var basicTimeout = 180; // How fast we will switch the outfit, in ms
+  var changesOverallNum = 12; // How many outfit switches to do
+  var intervalCount; // counter for keeping eye on updates number
 
 
   launchAnimation = function(){
     reset();
     $(".outfit").show();
-    setTimeout(changeOutfit, interval(intervalCount));
-    // changeOutfit();
+    setTimeout(changeOutfit, basicTimeout);
   }
 
-  function interval(count){
-    return basicTimeout;
-  }
 
+  // performs outfit-changing loop; breaks when makes many enough
   function changeOutfit(){
     intervalCount += 1;
 
@@ -54,11 +48,21 @@ var changePerson;
     changeItem("bottom", setup[currentPerson.sex].quantity.bottom);
     changeItem("top", setup[currentPerson.sex].quantity.top);
   }
+
+  // We want only warm items in the end
+  // Warm items always in the beginning
   function wearWarmItems(){
     changeItem("shoes", setup[currentPerson.sex].warmQuantity.shoes);
     changeItem("bottom", setup[currentPerson.sex].warmQuantity.bottom);
     changeItem("top", setup[currentPerson.sex].warmQuantity.top);
   }
+
+  // items are contained in hierarchical structure
+  //   /img/<item_type>/<sex_type>/<num>.png
+  //  where item_type - one of "shoes", "bottom", "top"
+  //        sex_type - one of "f", "m"
+  //        num is integer; they are guaranteed not to miss a number;
+  //          max num for each type/sex is contained in 'setup' object
   function changeItem(name, max){
     var num = Math.ceil(max*Math.random())
     var src = "/img/"+name+"/"+currentPerson.sex+"/"+num+".png";
@@ -72,10 +76,10 @@ var changePerson;
     startTheRain();
   }
 
+  // resets all the screen to basic state
   function reset(){
     intervalCount = 0;
     $("#prediction").hide();
-    // $("#change-person").hide();
     $(".outfit").hide();
     stopTheRain();
   }
@@ -88,7 +92,7 @@ var changePerson;
     currentPerson = newPerson;
     $("#person").attr("src", "/img/person/" + currentPerson.url)
     changeItems();
-    showDuck();
+    showDuck(); //quack-quack
     changeButton(currentPerson.buttonId);
     reset();
   }
