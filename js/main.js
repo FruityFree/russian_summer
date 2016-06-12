@@ -6,14 +6,14 @@ var changePerson;
 
 (function(){
   var intervalCount;
-  var intervalId;
-  var outfitOverallCount = 4;
-  var isCyclist = true;
+  // var intervalId;
+  // var outfitOverallCount = 4;
   // launchAnimation = launchAnimation;
 
   //Data vars. Defined in the end;
   var remarks;
   var setup;
+  var people;
 
 
   var basicTimeout = 240;
@@ -65,37 +65,32 @@ var changePerson;
 
   function showSigns(){
     showPrediction();
-    $("#change-cyclist").show();
+    $("#change-person").show();
     startTheRain();
   }
 
   function reset(){
     intervalCount = 0;
     $("#prediction").hide();
-    $("#change-cyclist").hide();
+    $("#change-person").hide();
     $(".outfit").hide();
     stopTheRain();
   }
 
   changePerson = function(){
-    if (isCyclist){
-      $("#cyclist").attr("src", "/img/pedestrian.png");
-      $("#change-cyclist").text("хочу кататься");
-      isCyclist = false;
-    } else {
-      $("#cyclist").attr("src", "/img/cyclist_base.png");
-      $("#change-cyclist").text("не хочу кататься");
-      isCyclist = true;
-    }
+    currentPerson = people[Math.floor(people.length*Math.random())]
+
+
     reset();
   }
 
   //TODO remove on production
   //launchAnimation();
 
-  function Person(){
+  function Person(sex, url){
     this.sex = sex;
-    this.buttonUrl = buttonUrl;
+    this.url = url;
+    // this.buttonUrl = buttonUrl;
   }
 
   function showPrediction(){
@@ -131,4 +126,14 @@ var changePerson;
       }
     }
   }
+
+  people = [
+    new Person("m", "boy1.png"),
+    new Person("m", "boy2.png"),
+    new Person("m", "boy3.png"),
+    new Person("f", "girl1.png"),
+    new Person("f", "girl2.png"),
+    new Person("f", "girl3.png")
+  ]
+  console.log(people);
 })()
