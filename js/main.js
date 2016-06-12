@@ -14,6 +14,7 @@ var changePerson;
   var remarks;
   var setup;
   var people;
+  var currentPerson;
 
 
   var basicTimeout = 240;
@@ -24,6 +25,7 @@ var changePerson;
 
 
   launchAnimation = function(){
+    console.log(currentPerson);
     reset();
     $(".outfit").show();
     setTimeout(changeOutfit, interval(intervalCount));
@@ -48,18 +50,19 @@ var changePerson;
   }
 
   function changeItems(){
-    changeItem("shoes", setup.m.quantity.shoes);
-    changeItem("bottom", setup.m.quantity.bottom);
-    changeItem("top", setup.m.quantity.top);
+    changeItem("shoes", setup[currentPerson.sex].quantity.shoes);
+    changeItem("bottom", setup[currentPerson.sex].quantity.bottom);
+    changeItem("top", setup[currentPerson.sex].quantity.top);
   }
   function wearWarmItems(){
-    changeItem("shoes", setup.m.warmQuantity.shoes);
-    changeItem("bottom", setup.m.warmQuantity.bottom);
-    changeItem("top", setup.m.warmQuantity.top);
+    changeItem("shoes", setup[currentPerson.sex].warmQuantity.shoes);
+    changeItem("bottom", setup[currentPerson.sex].warmQuantity.bottom);
+    changeItem("top", setup[currentPerson.sex].warmQuantity.top);
   }
   function changeItem(name, max){
     var num = Math.ceil(max*Math.random())
-    $("#"+name+"-img").attr("src", "/img/"+name+"/m/"+num+".png");
+    var src = "/img/"+name+"/"+currentPerson.sex+"/"+num+".png";
+    $("#"+name+"-img").attr("src", src);
   }
 
 
@@ -72,15 +75,16 @@ var changePerson;
   function reset(){
     intervalCount = 0;
     $("#prediction").hide();
-    $("#change-person").hide();
+    // $("#change-person").hide();
     $(".outfit").hide();
     stopTheRain();
   }
 
   changePerson = function(){
-    currentPerson = people[Math.floor(people.length*Math.random())]
-
-
+    currentPerson = people[Math.floor(people.length*Math.random())];
+    console.log(currentPerson);
+    $("#person").attr("src", "/img/person/" + currentPerson.url)
+    changeItems();
     reset();
   }
 
@@ -124,6 +128,18 @@ var changePerson;
         bottom: 4,
         top: 8
       }
+    },
+    f: {
+      quantity:{
+        shoes: 13,
+        bottom: 12,
+        top: 18
+      },
+      warmQuantity:{
+        shoes: 4,
+        bottom: 4,
+        top: 4
+      }
     }
   }
 
@@ -135,5 +151,5 @@ var changePerson;
     new Person("f", "girl2.png"),
     new Person("f", "girl3.png")
   ]
-  console.log(people);
+  currentPerson = people[0];
 })()

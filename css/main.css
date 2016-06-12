@@ -155,18 +155,21 @@ header img{
   bottom: 40px;
   left: 640px;
 }
-#button a{
+#change-person{
   color: #00bed9;
   display: block;
   left: 105px;
-  top: 88px;
+  top: 92px;
   position: absolute;
-  font-size: 0.75em;
-  display: none;
+  font-size: 0.9em;
+  /*display: none;*/
+  z-index: 120;
+  cursor:pointer;
+  text-decoration: underline;
 }
 #button img{
   width: 306px;
-  cursor: pointer;
+  /*cursor: pointer;*/
 }
 #main-button{
   z-index: 100;
