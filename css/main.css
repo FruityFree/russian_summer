@@ -95,6 +95,7 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+
 body{
   font-family: "PT Sans", Sans;
   font-size: 16px;
@@ -103,52 +104,64 @@ body{
   width: 100%;
   height: 100%;
 }
+
 #center-wrapper{
   width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  /*overflow:hidden;*/
 }
 
-header img{
-  width: 780px;
+#center-wrapper{
   margin: 0 auto;
+  position: relative;
+}
+
+/* header */
+header{
+  width: 720px;
+}
+
+header{
+  margin: 0 auto;
+}
+header img{
+  max-width: 100%;
   display: block;
 }
 
+
+/* person */
 #man{
   width: 450px;
+  min-height: 500px;
   margin-left: 180px;
   margin-top: -80px;
+}
+
+#man{
   position: relative;
 }
 #man #person{
-  width: 400px;
-  min-height: 500px;
+  max-width: 100%;
 }
 
 #duck{
   position: absolute;
-  width: 400px;
+  max-width: 100%;
   top: 0;
   left: 0;
   z-index: 400;
   display: none;
 }
 
-
-
 .outfit{
   position: absolute;
   display: none;
-  /*left: 222px;
-  top: 130px;*/
-  /*opacity: 0.7;*/
 }
 .outfit img{
-  width: 400px;
+  max-width: 100%;
 }
 
+
+/* Interaction */
 #prediction{
   font-size: 2.15em;
   line-height: 1.15;
@@ -196,6 +209,7 @@ header img{
   top: 0;
 }
 
+/* rain */
 #rain{
   position: absolute;
   left: 0px;
@@ -211,11 +225,8 @@ header img{
   left: -400;
 }
 
-/*#contacts{
-  position: absolute;
-  top: 400px;
-  left: 10px;
-}*/
+
+/* links */
 #ext-link{
   width: 110px;
   margin: 100px auto;
