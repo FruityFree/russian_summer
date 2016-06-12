@@ -38,6 +38,7 @@ var changePerson;
     intervalCount += 1;
 
     if (intervalCount > changesOverallNum){
+      setTimeout(wearWarmItems, basicTimeout);
       setTimeout(showSigns, 800);
     } else {
       setTimeout(changeOutfit, interval(intervalCount));
@@ -50,7 +51,11 @@ var changePerson;
     changeItem("shoes", setup.m.quantity.shoes);
     changeItem("bottom", setup.m.quantity.bottom);
     changeItem("top", setup.m.quantity.top);
-
+  }
+  function wearWarmItems(){
+    changeItem("shoes", setup.m.warmQuantity.shoes);
+    changeItem("bottom", setup.m.warmQuantity.bottom);
+    changeItem("top", setup.m.warmQuantity.top);
   }
   function changeItem(name, max){
     var num = Math.ceil(max*Math.random())
