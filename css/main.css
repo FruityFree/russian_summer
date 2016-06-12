@@ -119,6 +119,8 @@ header img{
   #man{
     margin: -75px auto 0;
     width: 280px;
+    position: relative;
+    left: -40px;
   }
   #interaction{
     flex-direction: column;
