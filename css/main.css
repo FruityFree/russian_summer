@@ -107,7 +107,7 @@ body{
 
 /* basic */
 #center-wrapper{
-  width: 1200px;
+  width: 1024px;
 }
 
 
@@ -134,9 +134,9 @@ header img{
 /* person */
 #man{
   float:left;
-  width: 450px;
+  width: 400px;
   min-height: 500px;
-  margin-left: 180px;
+  margin-left: 120px;
   margin-top: -80px;
 }
 
@@ -169,14 +169,20 @@ header img{
 /* Interaction */
 #interaction{
   flex-direction: column;
-  padding-top: 200px;
+  padding-left: 50px;
 }
+
 #interaction{
   display: flex;
 }
 
 
 /* Message */
+#prediction{
+  margin-left: 20px;
+  margin-top: 140px;
+}
+
 #prediction{
   font-size: 2.15em;
   line-height: 1.15;
@@ -186,11 +192,14 @@ header img{
 
 /* Button */
 #button{
-
+  margin-top: 70px;
 }
-
 #button img{
   width: 306px;
+}
+#change-person{
+  margin-top: -20px;
+  padding-left: 100px;
 }
 
 #button{
@@ -208,11 +217,6 @@ header img{
 }
 #main-button:active{
   opacity: 0;
-}
-
-#change-person{
-  margin-top: -20px;
-  padding-left: 100px;
 }
 #change-person{
   color: #00bed9;
@@ -247,7 +251,7 @@ header img{
 /* links */
 #ext-link{
   width: 110px;
-  margin: 100px auto;
+  margin: 140px auto;
 }
 #ext-link a{
   /*color: #00bed9;*/
