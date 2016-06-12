@@ -105,9 +105,11 @@ body{
   height: 100%;
 }
 
+/* basic */
 #center-wrapper{
   width: 1200px;
 }
+
 
 #center-wrapper{
   margin: 0 auto;
@@ -118,6 +120,7 @@ body{
 header{
   width: 720px;
 }
+
 
 header{
   margin: 0 auto;
@@ -130,11 +133,13 @@ header img{
 
 /* person */
 #man{
+  float:left;
   width: 450px;
   min-height: 500px;
   margin-left: 180px;
   margin-top: -80px;
 }
+
 
 #man{
   position: relative;
@@ -162,52 +167,52 @@ header img{
 
 
 /* Interaction */
+#interaction{
+  flex-direction: column;
+  padding-top: 200px;
+}
+#interaction{
+  display: flex;
+}
+
+
+/* Message */
 #prediction{
   font-size: 2.15em;
   line-height: 1.15;
-  position: absolute;
-  top: 420px;
-  left: 650px;
-  display: none;
+  /*display: none;*/
 }
 
+
+/* Button */
+#button{
+
+}
+
+#button img{
+  width: 306px;
+}
 
 #button{
   border: 0;
   background: transparent;
-  /*position: relative;*/
-  position: absolute;
-  bottom: 40px;
-  left: 640px;
 }
-#change-person{
-  color: #00bed9;
-  display: block;
-  left: 103px;
-  top: 92px;
-  position: absolute;
-  font-size: 0.9em;
-  /*display: none;*/
-  z-index: 120;
-  cursor:pointer;
-  text-decoration: underline;
-}
-#button img{
-  width: 306px;
-  cursor: pointer;
+#active-button{
+  position:absolute;
+  z-index: 5;
 }
 #main-button{
-  z-index: 100;
-  position: relative;;
+  z-index: 10;
+  cursor: pointer;
+  position: relative;
 }
 #main-button:active{
   opacity: 0;
 }
-#active-button{
-  z-index: 5;
-  position: absolute;
-  top: 0;
-}
+
+
+
+
 
 /* rain */
 #rain{
