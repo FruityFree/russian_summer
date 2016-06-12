@@ -12,7 +12,7 @@ var changePerson;
   // launchAnimation = launchAnimation;
 
 
-  var basicTimeout = 240;
+  var basicTimeout = 40;
   var changesOverallNum = 3;
   // var changesOverallNum = 20;
   // var intervalsMx = [2.5,2.2, 2, 1.9, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1,
@@ -62,7 +62,7 @@ var changePerson;
 
   function reset(){
     intervalCount = 0;
-    $("#weather").hide();
+    $("#prediction").hide();
     $("#change-cyclist").hide();
     $(".outfit").hide();
     stopTheRain();
@@ -90,7 +90,6 @@ var changePerson;
   }
 
   function showPrediction(){
-    $("weather").text("Yo!");
-    $("#weather").show();
+    $("#prediction").show();
   }
 })()
