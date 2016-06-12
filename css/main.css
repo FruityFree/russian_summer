@@ -211,6 +211,11 @@ header img{
   left: -400;
 }
 
+/*#contacts{
+  position: absolute;
+  top: 400px;
+  left: 10px;
+}*/
 #ext-link{
   width: 120px;
   margin: 100px auto;
