@@ -128,13 +128,13 @@ header img{
 }
 .outfit{
   position: absolute;
-  left: 222px;
-  top: 130px;
   display: none;
+  /*left: 222px;
+  top: 130px;*/
   /*opacity: 0.7;*/
 }
 .outfit img{
-  width: 183px;
+  width: 400px;
 }
 
 #prediction{

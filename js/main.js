@@ -15,8 +15,8 @@ var changePerson;
   var remarks;
 
 
-  var basicTimeout = 40;
-  var changesOverallNum = 3;
+  var basicTimeout = 240;
+  var changesOverallNum = 5;
   // var changesOverallNum = 20;
   // var intervalsMx = [2.5,2.2, 2, 1.9, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1,
   //   1.1,1, 1,1,1,1.2,1.5,1.7,2,3,4]
@@ -53,6 +53,7 @@ var changePerson;
   }
   function changeItem(name){
     var num = Math.ceil(outfitOverallCount*Math.random())
+    
     $("#"+name+"-img").attr("src", "/img/"+name+"/m/"+num+".png");
   }
 
