@@ -119,11 +119,11 @@ header img{
 #man{
   width: 450px;
   margin-left: 180px;
-  margin-top: -50px;
+  margin-top: -80px;
   position: relative;
 }
-#man #cyclist{
-  width: 450px;
+#man #person{
+  width: 400px;
   min-height: 500px;
 }
 .outfit{
@@ -141,13 +141,10 @@ header img{
   font-size: 2.15em;
   line-height: 1.15;
   position: absolute;
-  top: 350px;
+  top: 420px;
   left: 650px;
   display: none;
 }
-
-
-
 
 
 #button{
@@ -155,7 +152,7 @@ header img{
   background: transparent;
   /*position: relative;*/
   position: absolute;
-  bottom: 90px;
+  bottom: 40px;
   left: 640px;
 }
 #button a{
