@@ -86,8 +86,19 @@ var changePerson;
     console.log(currentPerson);
     $("#person").attr("src", "/img/person/" + currentPerson.url)
     changeItems();
+    changeButton(currentPerson.buttonId);
     reset();
   }
+
+  function changeButton(buttonId){
+    var button = $.grep(buttons, function(e){ return e.id == buttonId; })[0];
+    $("#main-button").attr("src", button.url);
+    $("#active-button").attr("src", button.activeUrl);
+    $("#change-person").text(button.caption);
+  }
+
+
+
 
   function showPrediction(){
     $("#prediction").show();
@@ -104,8 +115,8 @@ var changePerson;
 
   function Button(id, activity, caption){
     this.id = id;
-    this.url = "/img/buttons/button"+activity+".png";
-    this.activeUrl = "/img/buttons/button"+activity+"_active.png";
+    this.url = "/img/buttons/button_"+activity+".png";
+    this.activeUrl = "/img/buttons/button_"+activity+"_active.png";
     this.caption = caption;
   }
 

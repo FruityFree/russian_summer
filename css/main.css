@@ -158,10 +158,10 @@ header img{
 #change-person{
   color: #00bed9;
   display: block;
-  left: 99px;
+  left: 103px;
   top: 92px;
   position: absolute;
-  font-size: 1em;
+  font-size: 0.9em;
   /*display: none;*/
   z-index: 120;
   cursor:pointer;
