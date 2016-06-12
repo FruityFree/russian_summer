@@ -89,7 +89,20 @@ var changePerson;
     this.buttonUrl = buttonUrl;
   }
 
+
+  var remarks = [
+    "Шапку не забудь!",
+    "Оставайся дома.",
+    "Не в этот раз.",
+    "Ты серьезно?",
+    "Точно надо?",
+    "А давай в другое лето?",
+    "Может, лучше чаю?"
+  ]
   function showPrediction(){
     $("#prediction").show();
+
+    var remarkId = Math.floor(remarks.length * Math.random());
+    $("#prediction #remark").text(remarks[remarkId]);
   }
 })()
