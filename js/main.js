@@ -1,5 +1,5 @@
 var launchAnimation;
-var changeCyclist;
+var changePerson;
 
 
 
@@ -65,9 +65,10 @@ var changeCyclist;
     $("#weather").hide();
     $("#change-cyclist").hide();
     $(".outfit").hide();
+    stopTheRain();
   }
 
-  changeCyclist = function(){
+  changePerson = function(){
     if (isCyclist){
       $("#cyclist").attr("src", "/img/pedestrian.png");
       $("#change-cyclist").text("хочу кататься");
@@ -82,4 +83,10 @@ var changeCyclist;
 
   //TODO remove on production
   //launchAnimation();
+
+  function Person(){
+    this.sex = sex;
+    this.buttonUrl = buttonUrl;
+    
+  }
 })()
