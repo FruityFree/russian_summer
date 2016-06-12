@@ -11,8 +11,9 @@ var changePerson;
   var isCyclist = true;
   // launchAnimation = launchAnimation;
 
-  //Data vars. Defined later;
+  //Data vars. Defined in the end;
   var remarks;
+  var setup;
 
 
   var basicTimeout = 240;
@@ -46,14 +47,13 @@ var changePerson;
   }
 
   function changeItems(){
-    changeItem("shoes");
-    changeItem("bottom");
-    changeItem("top");
+    changeItem("shoes", setup.m.quantity.shoes);
+    changeItem("bottom", setup.m.quantity.bottom);
+    changeItem("top", setup.m.quantity.top);
 
   }
-  function changeItem(name){
-    var num = Math.ceil(outfitOverallCount*Math.random())
-    
+  function changeItem(name, max){
+    var num = Math.ceil(max*Math.random())
     $("#"+name+"-img").attr("src", "/img/"+name+"/m/"+num+".png");
   }
 
@@ -110,5 +110,20 @@ var changePerson;
     "Точно надо?",
     "А давай в другое лето?",
     "Может, лучше чаю?"
-  ]
+  ];
+
+  setup = {
+    m: {
+      quantity:{
+        shoes: 11,
+        bottom: 15,
+        top: 22
+      },
+      warmQuantity:{
+        shoes: 3,
+        bottom: 4,
+        top: 8
+      }
+    }
+  }
 })()
