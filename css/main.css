@@ -117,9 +117,7 @@ body{
 }
 
 /* header */
-header{
-  width: 720px;
-}
+
 
 
 header{
@@ -130,16 +128,40 @@ header img{
   display: block;
 }
 
+@media all and (max-width:800px){
 
-/* person */
-#man{
-  float:left;
-  width: 400px;
-  min-height: 500px;
-  margin-left: 120px;
-  margin-top: -80px;
+}
+@media all and (min-width:800px) and (max-width:1200px){
+  header{
+    width: 720px;
+  }
+  #man{
+    float:left;
+    width: 400px;
+    min-height: 500px;
+    margin-left: 120px;
+    margin-top: -80px;
+  }
+  #interaction{
+    flex-direction: column;
+    padding-left: 50px;
+  }
+  #button{
+    margin-top: 70px;
+  }
+  #button img{
+    width: 306px;
+  }
+  #change-person{
+    margin-top: -20px;
+    padding-left: 100px;
+  }
+}
+@media all and (min-width:1021px){
+
 }
 
+/* person */
 
 #man{
   position: relative;
@@ -167,10 +189,6 @@ header img{
 
 
 /* Interaction */
-#interaction{
-  flex-direction: column;
-  padding-left: 50px;
-}
 
 #interaction{
   display: flex;
@@ -191,16 +209,6 @@ header img{
 
 
 /* Button */
-#button{
-  margin-top: 70px;
-}
-#button img{
-  width: 306px;
-}
-#change-person{
-  margin-top: -20px;
-  padding-left: 100px;
-}
 
 #button{
   border: 0;
