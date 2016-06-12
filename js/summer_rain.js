@@ -35,16 +35,17 @@ var stopTheRain;
   var drops = [];
   var hiddenDrops = [];
 
+
   function Drop(element){
     this.element = element;
-    this.xPos = getStartX();
-    this.yPos = getStartY();
-    this.speedX = getSpeedX();
-    this.speedY = getSpeedY();
-    this.rotation = -5 + 10*Math.random();
+    this.xPos = getPosition(150, browserWidth);
+    this.yPos = getPosition(150, browserHeight);
+    this.speedX = -1.5 - Math.random();
+    this.speedY = 4 + Math.random();
+    this.rotation = -25 + 10*Math.random();
 
     this.element.style.opacity = .2 + 0.8*Math.random();
-    this.element.height = 35 + 15*Math.random();
+    this.element.height = 20 + 5*Math.random();
   }
 
   Drop.prototype.update = function(){
@@ -97,22 +98,6 @@ var stopTheRain;
   }
 
 
-
-  function getStartX(){
-    return getPosition(150, browserWidth);
-  }
-
-  function getStartY(){
-    return getPosition(150, browserHeight);
-  }
-
-  function getSpeedX(){
-    return -2.5 - Math.random();
-  }
-
-  function getSpeedY(){
-    return 6 + Math.random();
-  }
 
   function getPosition(offset, size) {
     return Math.round(-1*offset + Math.random() * (size+2*offset));

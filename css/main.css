@@ -119,7 +119,7 @@ header img{
 #man{
   width: 450px;
   margin-left: 180px;
-  margin-top: 50px;
+  margin-top: -50px;
   position: relative;
 }
 #man #cyclist{
@@ -172,7 +172,7 @@ header img{
   position: absolute;
   left: 0px;
   top: 0px;
-  z-index: 1000;
+  z-index: -100;
 }
 
 .raindrop{
