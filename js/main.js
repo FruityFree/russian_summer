@@ -86,8 +86,16 @@ var changePerson;
     console.log(currentPerson);
     $("#person").attr("src", "/img/person/" + currentPerson.url)
     changeItems();
+    showDuck();
     changeButton(currentPerson.buttonId);
     reset();
+  }
+
+  function showDuck(){
+    if (currentPerson.hasDuck)
+      $("#duck").show();
+    else
+      $("#duck").hide();
   }
 
   function changeButton(buttonId){
@@ -107,10 +115,11 @@ var changePerson;
   }
 
   //models
-  function Person(sex, url, buttonId){
+  function Person(sex, url, buttonId, hasDuck){
     this.sex = sex;
     this.url = url;
     this.buttonId = buttonId;
+    this.hasDuck = hasDuck;
   }
 
   function Button(id, activity, caption){
@@ -161,7 +170,7 @@ var changePerson;
 
   people = [
     new Person("m", "boy1.png", 1),
-    new Person("m", "boy2.png", 3),
+    new Person("m", "boy2.png", 3, true),
     new Person("m", "boy3.png", 2),
     new Person("f", "girl1.png", 1),
     new Person("f", "girl2.png", 4),
