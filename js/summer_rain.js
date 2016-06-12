@@ -63,8 +63,11 @@ var stopTheRain;
   }
 
   function resetDimensions(){
-    browserWidth = document.documentElement.clientWidth;
-    browserHeight = document.documentElement.clientHeight;
+    // browserWidth = document.documentElement.clientWidth;
+    // browserHeight = document.documentElement.clientHeight;
+    var ratio = window.devicePixelRatio || 1;
+    browserWidth = screen.width * ratio;
+    browserHeight = screen.height * ratio;
   }
 
   function drawDrops(){
