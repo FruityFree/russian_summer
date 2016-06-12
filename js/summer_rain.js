@@ -10,6 +10,7 @@ var stopTheRain;
     }
     // window.addEventListener("DOMContentLoaded",drawDrops, false);
     // window.addEventListener("resize", setResetFlag, false);
+    window.addEventListener("resize", resetDimensions, false);
   }
 
   stopTheRain = function(){
@@ -28,7 +29,7 @@ var stopTheRain;
                             window.webkitRequestAnimationFrame ||
                             window.msRequestAnimationFrame;
 
-  var dropNum = 100;
+  var dropNum = 200;
   var browserWidth;
   var browserHeight;
 
@@ -61,10 +62,13 @@ var stopTheRain;
     setTranslate3DTransform(this.element, newX, newY, rotation);
   }
 
-
-  function drawDrops(){
+  function resetDimensions(){
     browserWidth = document.documentElement.clientWidth;
     browserHeight = document.documentElement.clientHeight;
+  }
+
+  function drawDrops(){
+    resetDimensions();
 
     var originalDrop = document.querySelector(".raindrop");
     var dropContainer = originalDrop.parentNode;
