@@ -210,6 +210,19 @@ header img{
   opacity: 0;
 }
 
+#change-person{
+  margin-top: -20px;
+  padding-left: 100px;
+}
+#change-person{
+  color: #00bed9;
+  display: block;
+  font-size: 0.9em;
+  z-index: 120;
+  cursor:pointer;
+  text-decoration: underline;
+}
+
 
 
 

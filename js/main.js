@@ -190,5 +190,5 @@ var changePerson;
     new Button(3, "swim", "не хочу купаться"),
     new Button(4, "walk", "не хочу гулять"),
   ];
-  changePerson();
+  // changePerson();
 })()
