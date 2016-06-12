@@ -68,7 +68,7 @@ var changePerson;
 
   function showSigns(){
     showPrediction();
-    $("#change-person").show();
+    // $("#change-person").show();
     startTheRain();
   }
 
@@ -103,6 +103,12 @@ var changePerson;
     $("#prediction #remark").text(remarks[remarkId]);
   }
 
+  function Button(id, activity, caption){
+    this.id = id;
+    this.url = "/img/buttons/button"+activity+".png";
+    this.activeUrl = "/img/buttons/button"+activity+"_active.png";
+    this.caption = caption;
+  }
 
 
   //data
