@@ -89,19 +89,17 @@ var changePerson;
     reset();
   }
 
-  //TODO remove on production
-  //launchAnimation();
-
-  function Person(sex, url){
-    this.sex = sex;
-    this.url = url;
-    // this.buttonUrl = buttonUrl;
-  }
-
   function showPrediction(){
     $("#prediction").show();
     var remarkId = Math.floor(remarks.length * Math.random());
     $("#prediction #remark").text(remarks[remarkId]);
+  }
+
+  //models
+  function Person(sex, url, buttonId){
+    this.sex = sex;
+    this.url = url;
+    this.buttonId = buttonId;
   }
 
   function Button(id, activity, caption){
@@ -151,12 +149,12 @@ var changePerson;
   }
 
   people = [
-    new Person("m", "boy1.png"),
-    new Person("m", "boy2.png"),
-    new Person("m", "boy3.png"),
-    new Person("f", "girl1.png"),
-    new Person("f", "girl2.png"),
-    new Person("f", "girl3.png")
+    new Person("m", "boy1.png", 1),
+    new Person("m", "boy2.png", 3),
+    new Person("m", "boy3.png", 2),
+    new Person("f", "girl1.png", 1),
+    new Person("f", "girl2.png", 4),
+    new Person("f", "girl3.png", 4)
   ]
   currentPerson = people[0];
 
