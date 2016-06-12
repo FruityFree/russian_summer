@@ -43,19 +43,19 @@ var changePerson;
   }
 
   function changeItems(){
-    changeItem("boots");
-    changeItem("pants");
-    changeItem("jacket");
+    changeItem("shoes");
+    changeItem("bottom");
+    changeItem("top");
 
   }
   function changeItem(name){
     var num = Math.ceil(outfitOverallCount*Math.random())
-    $("#"+name+"-img").attr("src", "/img/outfits/"+name+num+".png");
+    $("#"+name+"-img").attr("src", "/img/"+name+"/m/"+num+".png");
   }
 
 
   function showSigns(){
-    $("#weather").show();
+    showPrediction();
     $("#change-cyclist").show();
     startTheRain();
   }
@@ -87,6 +87,10 @@ var changePerson;
   function Person(){
     this.sex = sex;
     this.buttonUrl = buttonUrl;
-    
+  }
+
+  function showPrediction(){
+    $("weather").text("Yo!");
+    $("#weather").show();
   }
 })()
