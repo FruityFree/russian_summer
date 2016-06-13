@@ -2,20 +2,19 @@
 var launchAnimation;
 // Function - switch the person + corresponding button
 var changePerson;
-
+var setup;
 
 (function(){
 
 
   //Data vars. Defined in the end;
   var remarks;
-  var setup;
   var people;
   var currentPerson;
   var buttons;
 
 
-  var basicTimeout = 240; // How fast we will switch the outfit, in ms
+  var basicTimeout = 200; // How fast we will switch the outfit, in ms
   var changesOverallNum = 12; // How many outfit switches to do
   var intervalCount; // counter for keeping eye on updates number
 

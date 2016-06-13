@@ -112,5 +112,27 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-45003164-7','auto');ga('send','pageview');
         </script>
+
+        <div class="hidden">
+        	<script type="text/javascript">
+        		<!--//--><![CDATA[//><!--
+        			var images = new Array()
+              sex = ["f", "m"]
+              item_type = ["bottom", "top", "shoes"]
+              for (var s=0; s<2; s++){
+                for (var t=0; t<3; t++){
+                  for (var i=1; i<20; i++){
+                       if (i>setup[sex[s]].quantity[item_type[t]]){
+                         break;
+                       }
+                    var src = "/img/"+ item_type[t]+"/" + sex[s]+"/"+ i + ".png";
+                    images[s*2+t*4+i*8] = new Image();
+          					images[s*2+t*4+i*8].src = src;
+                  }
+                }
+              }
+        		//--><!]]>
+        	</script>
+        </div>
     </body>
 </html>
