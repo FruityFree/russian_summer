@@ -22,8 +22,8 @@ var changePerson;
 
   // getTemperature - from weather.js
   getTemperature(setTemperature);
-  function setCallback(temperature){
-    $("#temperature").text("Завтра дождь, +"+temperature+".");
+  function setTemperature(temperature){
+    $("#weather").text("Завтра дождь, +"+temperature+".");
   }
 
   launchAnimation = function(){
