@@ -15,7 +15,7 @@ var changePerson;
   var buttons;
 
 
-  var basicTimeout = 180; // How fast we will switch the outfit, in ms
+  var basicTimeout = 240; // How fast we will switch the outfit, in ms
   var changesOverallNum = 12; // How many outfit switches to do
   var intervalCount; // counter for keeping eye on updates number
 
