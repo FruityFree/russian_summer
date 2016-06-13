@@ -4,8 +4,6 @@ var launchAnimation;
 var changePerson;
 
 
-
-
 (function(){
 
 
@@ -21,6 +19,12 @@ var changePerson;
   var changesOverallNum = 12; // How many outfit switches to do
   var intervalCount; // counter for keeping eye on updates number
 
+
+  // getTemperature - from weather.js
+  getTemperature(setTemperature);
+  function setCallback(temperature){
+    $("#temperature").text("Завтра дождь, +"+temperature+".");
+  }
 
   launchAnimation = function(){
     reset();

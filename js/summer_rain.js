@@ -69,6 +69,8 @@ var stopTheRain;
   function resetDimensions(){
     browserWidth =$(window).width();
     browserHeight = $(window).height();
+    dropNum = browserWidth/5;
+    dropNum = dropNum > 200 ? 200 : dropNum;
   }
 
   function drawDrops(){
